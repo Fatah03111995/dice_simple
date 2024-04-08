@@ -1,4 +1,6 @@
+import 'package:dice_simple/pages/dice_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +11,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+        debugShowCheckedModeBanner: false, home: DicePage());
   }
 }
