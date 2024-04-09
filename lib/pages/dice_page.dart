@@ -14,8 +14,10 @@ class _DicePage extends State<DicePage> {
   int leftDice = 1;
 
   void changeDice() {
-    rightDice = Random().nextInt(6) + 1;
-    leftDice = Random().nextInt(6) + 1;
+    setState(() {
+      rightDice = Random().nextInt(6) + 1;
+      leftDice = Random().nextInt(6) + 1;
+    });
   }
 
   @override
@@ -24,6 +26,7 @@ class _DicePage extends State<DicePage> {
       backgroundColor: Colors.red[800],
       appBar: AppBar(
         backgroundColor: Colors.red[900],
+        centerTitle: true,
         title: const Text(
           'Dice Simple App',
           style: TextStyle(fontFamily: 'Poppins', color: Colors.white),
